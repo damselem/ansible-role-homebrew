@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Daniel Salmeron Amselem
+  description: Ansible role for Homebrew
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.9
+  platforms:
+    - name: MacOSX
+      versions:
+        - all
+        - any
+  galaxy_tags: []
+
+dependencies:
+  - elliotweiser.osx-command-line-tools
