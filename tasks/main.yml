@@ -84,6 +84,12 @@
   with_items: "{{ homebrew_taps }}"
 
 # Cask.
+- name: Ensure Cask tap is tapped.
+  homebrew_tap:
+    tap: caskroom/cask
+    state: present
+    path: "{{ homebrew_brew_bin_path }}"
+
 - name: Install configured cask applications.
   homebrew_cask:
     name: "{{ item }}"
@@ -93,6 +99,12 @@
   with_items: "{{ homebrew_cask_apps }}"
 
 # Brew.
+- name: Ensure Homebrew Core tap is tapped.
+  homebrew_tap:
+    tap: homebrew/core
+    state: present
+    path: "{{ homebrew_brew_bin_path }}"
+
 - name: Ensure configured homebrew packages are installed.
   homebrew:
     name: "{{ item.name | default(item) }}"
