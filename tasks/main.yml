@@ -77,7 +77,7 @@
 
 # Tap.
 - name: Ensure configured taps are tapped.
-  homebrew_tap:
+  brew_tap:
     tap: "{{ item }}"
     state: present
     path: "{{ homebrew_brew_bin_path }}"
@@ -85,7 +85,7 @@
 
 # Cask.
 - name: Ensure Cask tap is tapped.
-  homebrew_tap:
+  brew_tap:
     tap: caskroom/cask
     state: present
     path: "{{ homebrew_brew_bin_path }}"
@@ -100,7 +100,7 @@
 
 # Brew.
 - name: Ensure Homebrew Core tap is tapped.
-  homebrew_tap:
+  brew_tap:
     tap: homebrew/core
     state: present
     path: "{{ homebrew_brew_bin_path }}"

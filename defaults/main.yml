@@ -1,15 +1,17 @@
 ---
-homebrew_repo: https://github.com/Homebrew/brew
-homebrew_prefix: "{{ ansible_env.HOME }}"
-homebrew_install_path: "{{ homebrew_prefix }}/.homebrew"
 homebrew_brew_bin_path: "{{ homebrew_install_path }}/bin"
-homebrew_upgrade_all_packages: False
-homebrew_cask_appdir: /Applications
-homebrew_uninstalled_packages: []
-
-homebrew_prefix_owner: root
-homebrew_prefix_group: admin
-homebrew_install_path_owner: "{{ ansible_user_id }}"
-homebrew_install_path_group: admin
-homebrew_brew_bin_path_owner: "{{ ansible_user_id }}"
 homebrew_brew_bin_path_group: admin
+homebrew_brew_bin_path_owner: "{{ ansible_user_id }}"
+homebrew_brewfile_dir: '~'
+homebrew_cask_appdir: /Applications
+homebrew_install_path: "{{ homebrew_prefix }}/.homebrew"
+homebrew_install_path_group: admin
+homebrew_install_path_owner: "{{ ansible_user_id }}"
+homebrew_prefix: "{{ ansible_env.HOME }}"
+homebrew_prefix_group: admin
+homebrew_prefix_owner: root
+homebrew_repo: https://github.com/Homebrew/brew
+homebrew_taps: []
+homebrew_uninstalled_packages: []
+homebrew_upgrade_all_packages: False
+homebrew_use_brewfile: False

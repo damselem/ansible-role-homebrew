@@ -28,7 +28,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.0',
 
 DOCUMENTATION = '''
 ---
-module: homebrew_tap
+module: brew_tap
 author:
     - "Indrajit Raychaudhuri (@indrajitr)"
     - "Daniel Jaouen (@danieljaouen)"
@@ -67,18 +67,18 @@ requirements: [ homebrew ]
 '''
 
 EXAMPLES = '''
-- homebrew_tap:
+- brew_tap:
     name: homebrew/dupes
 
-- homebrew_tap:
+- brew_tap:
     name: homebrew/dupes
     state: absent
 
-- homebrew_tap:
+- brew_tap:
     name: homebrew/dupes,homebrew/science
     state: present
 
-- homebrew_tap:
+- brew_tap:
     name: telemachus/brew
     url: 'https://bitbucket.org/telemachus/brew'
 '''
