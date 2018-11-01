@@ -107,18 +107,15 @@
 
 - name: Ensure configured homebrew packages are installed
   homebrew:
-    name: "{{ item.name | default(item) }}"
-    install_options: "{{ item.install_options | default(omit) }}"
+    name: "{{ homebrew_installed_packages }}"
     state: present
     path: "{{ homebrew_brew_bin_path }}"
-  with_items: "{{ homebrew_installed_packages }}"
 
 - name: Ensure blacklisted homebrew packages are not installed
   homebrew:
-    name: "{{ item }}"
+    name: "{{ homebrew_uninstalled_packages }}"
     state: absent
     path: "{{ homebrew_brew_bin_path }}"
-  with_items: "{{ homebrew_uninstalled_packages }}"
 
 - name: Upgrade all homebrew packages (if configured)
   homebrew:
